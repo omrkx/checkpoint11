@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1f33">
+    <meta name="description" content="ColdChain Guardian — a quality-aware cold-chain decision demo for GCC food logistics.">
+    <title>ColdChain Guardian · Operations</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+    <link rel="stylesheet" href="/styles.css?v=6">
+    <script defer src="/vendor/leaflet/leaflet.js"></script>
+    <script src="/app.js?v=6" type="module"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#overview" data-view="overview" aria-label="ColdChain Guardian overview">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-copy"><strong>coldchain</strong><small>GUARDIAN</small></span>
+        </a>
+        <div class="workspace-label">CONTROL ROOM <span class="tiny-pulse"></span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <button class="nav-item is-active" data-view="overview"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg><span>Overview</span></button>
+          <button class="nav-item" data-view="shipments"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5 12 3l8 3.5v11L12 21l-8-3.5z"/><path d="m4.5 6.8 7.5 3.5 7.5-3.5M12 10.5V21"/></svg><span>Shipments</span><span class="nav-count" id="navShipmentCount">—</span></button>
+          <button class="nav-item" data-view="field-data"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18c2.2-5.3 4.6-8 7-8s3.8 2.7 6 2.7 3-1.2 3-3.2"/><path d="M4 6v12h16"/><circle cx="11" cy="10" r="1.5"/></svg><span>Field data</span><span class="nav-new">REAL</span></button>
+          <button class="nav-item" data-view="simulation"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18c3.5-7 5-11 8-11s4.5 4 8 4"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="11" r="2"/><path d="M13 4v4m-2-2h4"/></svg><span>Simulation Lab</span><span class="nav-new">LAB</span></button>
+          <button class="nav-item" data-view="evaluation"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9m7 10V5m7 14v-7"/><path d="M3 19h18"/></svg><span>Evaluation Lab</span></button>
+          <button class="nav-item" data-view="products"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 7.2v9.6L12 21l7.5-4.2V7.2z"/><path d="m4.8 7.4 7.2 4 7.2-4M12 11.5V21"/></svg><span>Product Models</span></button>
+          <button class="nav-item" data-view="evidence"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h9l5 5v12H5z"/><path d="M14 3.5v5h5M8 13h8M8 16.5h8"/></svg><span>Evidence</span></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="offline-card">
+            <span class="offline-icon">⌘</span>
+            <div><strong>Offline mode</strong><small>Core models ready</small></div>
+            <span class="status-dot"></span>
+          </div>
+          <button class="profile-button" type="button" aria-label="Workspace profile">
+            <span class="avatar">CG</span>
+            <span><strong>GCC operations</strong><small>Local workspace</small></span>
+            <span class="profile-more">···</span>
+          </button>
+          <div class="sidebar-version">DEMO BUILD <span>0.4.0</span></div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open navigation">☰</button>
+          <div class="breadcrumb"><span id="breadcrumbScope">GCC network</span><i>/</i><strong id="breadcrumbCurrent">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="topbar-demo"><span class="status-dot"></span><span id="viewContext">SIMULATED QATAR / GCC</span></span>
+            <span class="topbar-divider"></span>
+            <span class="local-time" id="viewContextDetail">DOHA · UTC+3</span>
+            <button class="icon-button" id="refreshButton" type="button" title="Refresh data" aria-label="Refresh data">↻</button>
+          </div>
+        </header>
+        <div id="pageRoot" class="page-root" aria-live="polite">
+          <section class="loading-state"><span class="loading-spinner"></span><p>Loading local shipment data…</p></section>
+        </div>
+        <footer class="app-footer"><span>ColdChain Guardian <b>·</b> quality decision support demo</span><span>Quality estimates do not certify food safety.</span></footer>
+      </main>
+    </div>
+    <div class="mobile-scrim" id="mobileScrim"></div>
+    <div class="toast-region" id="toastRegion" role="status" aria-live="polite"></div>
+  </body>
+</html>

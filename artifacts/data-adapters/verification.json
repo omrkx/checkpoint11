@@ -1,0 +1,157 @@
+[
+  {
+    "dataset_id": "mango_air_cargo_thailand_france_v1",
+    "observations": 41418,
+    "measurement_types": {
+      "product": 20709,
+      "air": 20709
+    },
+    "quality_measurements": 7393,
+    "first_record": {
+      "dataset_id": "mango_air_cargo_thailand_france_v1",
+      "shipment_id": "TH-FR-MANGO-2023-04",
+      "sensor_id": "box-1_1_12-mango",
+      "observed_at": "2023-04-18T15:02:00",
+      "temperature_c": 31.6,
+      "relative_humidity_pct": null,
+      "latitude": null,
+      "longitude": null,
+      "product": "Nam Dok Mai Si-Thong mango",
+      "stage": "0 Packing House",
+      "measurement_type": "product",
+      "is_observed": true,
+      "source_row": "01_src_subset_dataset_T_H/0_Packing_House_1_1_12_Temp_Hum.txt:2:T_mangoes",
+      "quality_targets": {},
+      "metadata": {
+        "box_position": "1_1_12",
+        "timestamp_basis": "local source time; timezone changes with route stage",
+        "route": "Bangkok, Thailand to Paris, France"
+      }
+    }
+  },
+  {
+    "dataset_id": "bulk_milk_tank_spain_v2",
+    "observations": 186629,
+    "measurement_types": {
+      "surface": 93912,
+      "air": 92717
+    },
+    "quality_measurements": 321,
+    "first_record": {
+      "dataset_id": "bulk_milk_tank_spain_v2",
+      "shipment_id": "ES-MILK-TANK-20240831",
+      "sensor_id": "01:00:01:00:00:00:00-surface",
+      "observed_at": "2024-08-31T23:54:34Z",
+      "temperature_c": 4.25,
+      "relative_humidity_pct": null,
+      "latitude": null,
+      "longitude": null,
+      "product": "raw bulk milk",
+      "stage": "farm bulk tank storage",
+      "measurement_type": "surface",
+      "is_observed": true,
+      "source_row": "tank_temperature_probes_data.01_09_2024.csv:2:surface",
+      "quality_targets": {},
+      "metadata": {
+        "source_file": "tank_temperature_probes_data.01_09_2024.csv",
+        "source_device": "01:00:01:00:00:00:00"
+      }
+    }
+  },
+  {
+    "dataset_id": "strawberry_transport_us_v2026",
+    "observations": 68706,
+    "measurement_types": {
+      "product": 68706
+    },
+    "quality_measurements": 0,
+    "first_record": {
+      "dataset_id": "strawberry_transport_us_v2026",
+      "shipment_id": "S1",
+      "sensor_id": "front_top",
+      "observed_at": "2019-03-12T12:30:00",
+      "temperature_c": 23.3,
+      "relative_humidity_pct": null,
+      "latitude": null,
+      "longitude": null,
+      "product": "strawberry",
+      "stage": "transport",
+      "measurement_type": "product",
+      "is_observed": true,
+      "source_row": "S1:1:front_top",
+      "quality_targets": {
+        "future_r2_within_120_min_weak_label": null,
+        "current_risk_level_weak_label": null,
+        "eta_to_r2_minutes_weak_label": null,
+        "source_trainable_flag": false
+      },
+      "metadata": {
+        "timestamp_timezone": "not specified by bundled source",
+        "target_provenance": "rule-derived weak supervision; not spoilage or RSL"
+      }
+    }
+  },
+  {
+    "dataset_id": "commercial_apple_cold_storage_v2",
+    "observations": 1950535,
+    "measurement_types": {
+      "air": 1112514,
+      "surface": 838021
+    },
+    "quality_measurements": 0,
+    "first_record": {
+      "dataset_id": "commercial_apple_cold_storage_v2",
+      "shipment_id": "DE-APPLE-COLDROOM-T2",
+      "sensor_id": "LoraB-air",
+      "observed_at": "2024-10-09T08:44:11.415000Z",
+      "temperature_c": 11.614,
+      "relative_humidity_pct": 99.08,
+      "latitude": null,
+      "longitude": null,
+      "product": "apple",
+      "stage": "commercial cold storage",
+      "measurement_type": "air",
+      "is_observed": true,
+      "source_row": "TTH_ColdRoom/t2/t2.LoraB.txt:2:T_Air",
+      "quality_targets": {},
+      "metadata": {
+        "test_id": "t2",
+        "source_local_datetime": "2024-10-09 10:44:11",
+        "epoch_timestamp_used": true
+      }
+    }
+  },
+  {
+    "dataset_id": "retail_produce_display_cases_v1",
+    "observations": 224,
+    "measurement_types": {
+      "aggregate": 224
+    },
+    "quality_measurements": 0,
+    "first_record": {
+      "dataset_id": "retail_produce_display_cases_v1",
+      "shipment_id": "Retailer 1-case-1",
+      "sensor_id": "TF",
+      "observed_at": null,
+      "temperature_c": 4.760237665010226,
+      "relative_humidity_pct": 90.80694938011287,
+      "latitude": null,
+      "longitude": null,
+      "product": "fresh produce (case inventory not specified)",
+      "stage": "retail refrigerated display",
+      "measurement_type": "aggregate",
+      "is_observed": true,
+      "source_row": "Sheet1:2",
+      "quality_targets": {},
+      "metadata": {
+        "doors": "NO",
+        "median_temperature_c": 4.46,
+        "minimum_temperature_c": 3.33,
+        "maximum_temperature_c": 14.34,
+        "percent_above_source_limit": 11.893289163278622,
+        "longest_high_abuse_run": 414,
+        "timestamp_missing_by_source": true
+      }
+    }
+  }
+]

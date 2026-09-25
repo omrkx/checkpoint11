@@ -1,0 +1,14 @@
+node_modules/
+.env
+artifacts/evaluation/*.json
+artifacts/evaluation/*.csv
+artifacts/evaluation/*.png
+artifacts/public-benchmark/*.json
+artifacts/public-benchmark/*.csv
+*.log
+data/external/**/*.zip
+data/external/**/*.csv
+data/external/**/*.xlsx
+data/external/**/*.txt
+!data/external/README.md
+!data/external/manifest.json

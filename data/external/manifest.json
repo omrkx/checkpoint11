@@ -1,0 +1,405 @@
+{
+  "generated_by": "scripts/download_open_datasets.py",
+  "files": [
+    {
+      "path": "data/external/apple-cold-storage/TTH_ColdRoom_June19.zip",
+      "bytes": 16381850,
+      "sha256": "06f2a85ca1590046e419823d14a65d98574b0ca0b0a43a6ef1b27f9df8d4ad42"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/laboratory_sample_analysis.csv",
+      "bytes": 2950,
+      "sha256": "3d27d3ef128103fc7d90c622e27808b92046ddeaa041142a711b7299b3a39c0a"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.01_09_2024.csv",
+      "bytes": 79476,
+      "sha256": "94ec165af8c4e97fc00ce2fca5cce370439547fd6fd13777578ed2d68e0f4d5d"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.01_10_2024.csv",
+      "bytes": 86356,
+      "sha256": "30834594483543381fe78e7bd26bdfa31a6d62c3b80f305a201e95e2e6075ed7"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.02_09_2024.csv",
+      "bytes": 86190,
+      "sha256": "886aaee3d2e9f8838f70da4ffb805ab87928b4a5fb06d0f3f3e1544b96ae01d2"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.02_10_2024.csv",
+      "bytes": 84789,
+      "sha256": "a6fd833d31e8b4a55d08c40dca2193f6c9b2deeec48ca40576c831f06337d129"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.03_08_2024.csv",
+      "bytes": 86230,
+      "sha256": "f80b29195085fc4c37f0462b7a8621bee7537120b4c8e2dd5646dd14eb0f63ec"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.03_09_2024.csv",
+      "bytes": 65049,
+      "sha256": "07227a6a0ff988b3cf6473745d8207a3c548bb609c34acfb937004be0e54d22a"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.03_10_2024.csv",
+      "bytes": 80743,
+      "sha256": "5f058e4921048f474ec1a9cfdb8cab1302a0c8e3636c3a0c3c6e23f467928d6e"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.04_08_2024.csv",
+      "bytes": 86791,
+      "sha256": "9dc473f14821fdef081e0a1ce51afa00caeda1432ed43f0051a985e374516b94"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.04_09_2024.csv",
+      "bytes": 86217,
+      "sha256": "2b4c1a45d2e5aa85b3099932d7b2e775b909efa71faf54a631820b7c0cb02164"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.04_10_2024.csv",
+      "bytes": 84811,
+      "sha256": "41282d22f8f572947a6cc6752b45a53afbfc5621afb387c7fd88d614d3b8ad0a"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.05_08_2024.csv",
+      "bytes": 86125,
+      "sha256": "b96ce11dda7d9d9723d10655b8fb31054e91e73b494d8a143c7804b3bf2a6b49"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.05_09_2024.csv",
+      "bytes": 63511,
+      "sha256": "00812f82f982d23c18350659cde03c774fe91e43d6b66ca0573d86c428d044b3"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.05_10_2024.csv",
+      "bytes": 70607,
+      "sha256": "ff2da79ccec06568c41b1b547ff8f0598064512ec2eac48452e6f8a12ace2ab0"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.06_08_2024.csv",
+      "bytes": 70637,
+      "sha256": "39e75c09bb3b98c792c50fef1fd2e62172a3ae5c37cefe4ad54c2acebbbc20dc"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.06_09_2024.csv",
+      "bytes": 53252,
+      "sha256": "9472ee66d46ff4e8ee9db23fa4e5bd1039018125ab5a6ef705f5326547fac71e"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.06_10_2024.csv",
+      "bytes": 86205,
+      "sha256": "2c1b1537d8f42a67940aa65806c14142c1a31ca27f8f55e1fcfe871ba15802f0"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.07_08_2024.csv",
+      "bytes": 86054,
+      "sha256": "b424b113b6735941e649e822ee44197dec6f73af6a5f1ef8878e446cc04f486c"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.07_09_2024.csv",
+      "bytes": 64930,
+      "sha256": "025b64d1d9c8151f08255e41eccdb41a6670e413e26981c94f7e3a270233efd0"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.07_10_2024.csv",
+      "bytes": 70772,
+      "sha256": "243867ca28dd8ad9f875b64c18b9ce224bb10c931726abb20f8de64e1e765b5d"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.08_08_2024.csv",
+      "bytes": 76321,
+      "sha256": "358acb2ae8aad489690e20fa8be1cb7b68a513ee568e657e4ffee4c219e7e660"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.08_09_2024.csv",
+      "bytes": 86167,
+      "sha256": "7d056ba28f7919d5cc3098e903198f1fe0544fbe1e3eeaa7efe76b7ab37aafae"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.08_10_2024.csv",
+      "bytes": 86234,
+      "sha256": "88796867c66f81670f14ac4d3579744a4b9d9a776f2f38f53c318e0da22eec5f"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.09_08_2024.csv",
+      "bytes": 87612,
+      "sha256": "d1bf8eda335b3e8aef367ce502e1bc802a65f3e1711f50875ab63ad025a67be8"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.09_09_2024.csv",
+      "bytes": 78008,
+      "sha256": "db030b6b6233b3fbcd79e6ee19941f6f3a2c40b2c004ada4342c242082a07944"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.09_10_2024.csv",
+      "bytes": 67718,
+      "sha256": "e428ab20a0acb899fda7135fb381ede3cea7fc4205ca5b7f94c4243a09758558"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.10_08_2024.csv",
+      "bytes": 82207,
+      "sha256": "d13eb85deabe780ef8bd63b2dcc3dc95e8da1817671bab72225406a8982fae3c"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.10_09_2024.csv",
+      "bytes": 86153,
+      "sha256": "33a8076131c50945da5e28989ff681e395bd01cc7dab1dcc424c50bbc62a833b"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.10_10_2024.csv",
+      "bytes": 86119,
+      "sha256": "3fbed170529b94b3359ec1e5e01f54c3a74284b96f87af5be7159ee0aa9647d5"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.11_08_2024.csv",
+      "bytes": 86174,
+      "sha256": "3cea88178305db829e00f5753ed5114a3f375939e74bdf0e18989b8690fa9075"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.11_09_2024.csv",
+      "bytes": 67827,
+      "sha256": "119dc35d0a5b9479b4d3baef486ce336e910c46616e93652275e84792448d4c9"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.11_10_2024.csv",
+      "bytes": 69245,
+      "sha256": "74351ad5ed7cee8fb73944badb3603a6f5c44bc47e6275981ed0d040ff3c4f50"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.12_08_2024.csv",
+      "bytes": 77831,
+      "sha256": "61298595f8c26f89e0c06183b26fcefe8a5ee9a526418e322d68806d9225462f"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.12_09_2024.csv",
+      "bytes": 86125,
+      "sha256": "e14a05df306e0959589597331e37abeaf51746b2b42d45d3a0534863be45e936"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.12_10_2024.csv",
+      "bytes": 81977,
+      "sha256": "791d5170780e1e961f48228a1dac880213146fdd3047dad42d24f9a615265955"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.13_08_2024.csv",
+      "bytes": 86236,
+      "sha256": "a73d08a97fbbdcf7a3dc0c76142929c7863a71338a73e7920ddcb6553048bce9"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.13_09_2024.csv",
+      "bytes": 70661,
+      "sha256": "f502a678bebf9f381f961e2bc57b7dcaaee710f5d824071c2d7bc95d31a182bf"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.13_10_2024.csv",
+      "bytes": 60626,
+      "sha256": "677c5d20aae13331fe6c66a87682627581c6a5dfeb2a0c39a4c4ecb55b51b78f"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.14_08_2024.csv",
+      "bytes": 76469,
+      "sha256": "93d123cf47ea98b7431e68339628b4ea882430a7503760af543f2a73938328bb"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.14_09_2024.csv",
+      "bytes": 87589,
+      "sha256": "2527b1d5524976a9047a2142171807611bdaeabd4453d5952d5688f0ce35d1f1"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.14_10_2024.csv",
+      "bytes": 86357,
+      "sha256": "26a04e666a6be3279f32df02e99b2a997841aba4701fdd2c499a995ab52f7aff"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.15_08_2024.csv",
+      "bytes": 86214,
+      "sha256": "f65e64111d72f5a3117ec172e3f3323ddf803a48164bdd7c415f230313f8551b"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.15_09_2024.csv",
+      "bytes": 52076,
+      "sha256": "771773f6c44481d5a9f6077d9117e1fa4ee5f0102d2bd64f818ea0b5ddaea3f4"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.15_10_2024.csv",
+      "bytes": 77785,
+      "sha256": "23c3fdb6dd1d1ec5991231e92ba9753f97a3fa005fc9d4bc3f6371cbabc03de3"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.16_08_2024.csv",
+      "bytes": 56463,
+      "sha256": "3f4b5a391cabca2d2fa06450dd5a504b52a6d6c0175af877eb7fa6a9e9e78e49"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.16_09_2024.csv",
+      "bytes": 84612,
+      "sha256": "2621789861fe84a711b2e61ba30b29b0b9e9320f84914a613d2358cd829cf5f7"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.17_08_2024.csv",
+      "bytes": 86240,
+      "sha256": "5de206c01ccd69b62212880e4d2103e3e6bafa6652c53d385b5e0955e1420c6f"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.17_09_2024.csv",
+      "bytes": 65690,
+      "sha256": "4e3c13d89dc07f3efa73a39ac4a9a45614af1f19d3bcbb46edc1959859da5f4b"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.18_08_2024.csv",
+      "bytes": 79592,
+      "sha256": "84ab9c2ad316d7c50afe4133f71a22cb16379bc59607d114285d181d72eb304f"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.18_09_2024.csv",
+      "bytes": 23864,
+      "sha256": "0b8a72ead889513e5ea70443537cd3d4f5bc644ae483eaf24ff758de7eb9c451"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.19_08_2024.csv",
+      "bytes": 86242,
+      "sha256": "19e1403cc77ee8b219546e6f871436b70a616f69919fb2b89d4d02d509a80152"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.19_09_2024.csv",
+      "bytes": 27485,
+      "sha256": "13fdd40b5e77a69d6c4892d0188132ca6472d6147aaf1d23b9a75d931d4d26b5"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.20_08_2024.csv",
+      "bytes": 83637,
+      "sha256": "ce72d781ea8c1ead7a7fab20dca2ed00f2e71c48755af485a3f3e835f3d4582f"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.20_09_2024.csv",
+      "bytes": 84755,
+      "sha256": "f9870e8e17c4bbd5474b29dddd6c123bfd16381fca1d07f55a5b3485c092da97"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.21_08_2024.csv",
+      "bytes": 86148,
+      "sha256": "5cd90f17af85b01e4b83e3c078feaf5aedf80ada88b6b66abab13b1600646a8a"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.21_09_2024.csv",
+      "bytes": 66508,
+      "sha256": "13f2e8e1b6342593099251183267dcf79366bb912f913175479ba48462e7daf9"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.22_08_2024.csv",
+      "bytes": 59331,
+      "sha256": "06ab5a96514b0fabba1905688f2e3b4438f697f84752a7c1909408c91a767f11"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.22_09_2024.csv",
+      "bytes": 83328,
+      "sha256": "625cc867009a884a39d69cd91f853a427c1bd898a5273429087a9ff813dec2a5"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.23_08_2024.csv",
+      "bytes": 86140,
+      "sha256": "b9dcd83aa6d36e2aa221e16a410bdb913ea1b0ba96780843be4601b8d6c790e3"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.23_09_2024.csv",
+      "bytes": 75552,
+      "sha256": "b548d1407f850527b49f58a153863443467b0be8e285e4a3afd3e3022bfc1904"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.24_08_2024.csv",
+      "bytes": 73774,
+      "sha256": "7811172a0793d60a831cbd0a182a44833b5bcfc948155a1e222346a5e0ecaf39"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.24_09_2024.csv",
+      "bytes": 69381,
+      "sha256": "33d0507af3849052a5f7a165b0d07f3ad40f3abde98735f7f018f3e672af3534"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.25_08_2024.csv",
+      "bytes": 86225,
+      "sha256": "0d7c3819c5c21d47281011a1befaf3bba2dc53c0732c1887d2be34d2b9ea037f"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.25_09_2024.csv",
+      "bytes": 63423,
+      "sha256": "371ff9a7d46ccf4c912a6ce7626122fbba12b9e02be636523a034505296acf3a"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.26_08_2024.csv",
+      "bytes": 63430,
+      "sha256": "888d324e9feed06239700d6ab833c4c141d7cb4cf0ef32be7ae6e600297e05b4"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.26_09_2024.csv",
+      "bytes": 86239,
+      "sha256": "a2c8ce7d0d0ec0d7325e2cbb7a9984a11c86a21a4a42ef47920caade5dae0cfb"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.27_08_2024.csv",
+      "bytes": 86195,
+      "sha256": "78cbb03be7c5ac2dc7b4935d3874bfbfef42f1086872c1c8653b2e0e2556d109"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.27_09_2024.csv",
+      "bytes": 62038,
+      "sha256": "5e1c88eea5509e932c75e61610793d1e20d990cc47a8918fb772e5ee8c413968"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.28_08_2024.csv",
+      "bytes": 66319,
+      "sha256": "2d6b40bb427e107ba9725d1793c924911b067d9aebe0896c1c81c2c0b090db52"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.28_09_2024.csv",
+      "bytes": 86005,
+      "sha256": "997146794699851499a5ee95664c62e26b421989a1c73bf18d63ff50c7ae7b32"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.29_08_2024.csv",
+      "bytes": 87611,
+      "sha256": "30e86e9e0c8dc2c91d40eb27bf66d2e54c12cd0b5687a2eb10367841cdec228d"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.29_09_2024.csv",
+      "bytes": 73353,
+      "sha256": "b8b7a2057ec0cb6cc8599fb5240f360d90d946f7bf74af90ba54fa45bcb87a5b"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.30_08_2024.csv",
+      "bytes": 57825,
+      "sha256": "d885e569c04d0fafa08250199ff0e0e4e6d7be7549cf5922ddd75f48392fa098"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.30_09_2024.csv",
+      "bytes": 86032,
+      "sha256": "03ad83e22a0363c85d382cacdee8b3130e20ec528121fd43ecb384332a71e58b"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/tank_temperature_probes/tank_temperature_probes_data.31_08_2024.csv",
+      "bytes": 83382,
+      "sha256": "2cdb077b673b4ac52a9c15e2b02cd55723e06eb8904ad86cd20f358ae91e83a3"
+    },
+    {
+      "path": "data/external/bulk-milk-tank/weather_station.csv",
+      "bytes": 5148,
+      "sha256": "0045d783d1273d840fae1684267e67e4fd778cad9dbf265adf114ca2f233f05a"
+    },
+    {
+      "path": "data/external/mango-air-cargo/mango-air-cargo-complete.zip",
+      "bytes": 68179782,
+      "sha256": "9cfce770cd4f8c3e8b22f9264f841bec96cb5312dc9c978c0dc29fb58bc75e37"
+    },
+    {
+      "path": "data/external/retail-produce-cases/retail data FC.xlsx",
+      "bytes": 36684,
+      "sha256": "ff5abd064160249e8370faa094104d67b091a6a903942b28ae1b5e6d06e61a59"
+    },
+    {
+      "path": "data/public-strawberry/benchmark.json.gz",
+      "bytes": 103472,
+      "sha256": "53274ba3dbc4b9d9cd3634c0a844ec3a7a552db4c7070918648a1be2e1b8b26b"
+    }
+  ]
+}

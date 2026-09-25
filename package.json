@@ -1,0 +1,14 @@
+{
+  "name": "coldchain-guardian",
+  "version": "0.4.0",
+  "private": true,
+  "description": "Offline-capable cold-chain decision app with synthetic Qatar scenarios and multi-source public evidence",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "evaluate": "node scripts/evaluate.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

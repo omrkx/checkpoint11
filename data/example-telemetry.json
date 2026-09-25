@@ -1,0 +1,17 @@
+{
+  "shipmentId": "UPLOAD-DEMO-001",
+  "productId": "milk",
+  "productName": "Example milk telemetry",
+  "temperatureUnit": "C",
+  "routeStage": "REEFER_TRUCK",
+  "setpointC": 4,
+  "etaHours": 4,
+  "observations": [
+    { "timestampUtc": "2026-09-25T00:00:00Z", "sensorId": "front", "temperatureC": 4.1, "relativeHumidityPct": 77 },
+    { "timestampUtc": "2026-09-25T00:00:00Z", "sensorId": "centre", "temperatureC": 4.2, "relativeHumidityPct": 77 },
+    { "timestampUtc": "2026-09-25T00:00:00Z", "sensorId": "rear", "temperatureC": 4.0, "relativeHumidityPct": 77 },
+    { "timestampUtc": "2026-09-25T02:00:00Z", "sensorId": "front", "temperatureC": 4.3, "relativeHumidityPct": 78 },
+    { "timestampUtc": "2026-09-25T02:00:00Z", "sensorId": "centre", "temperatureC": 4.4, "relativeHumidityPct": 78 },
+    { "timestampUtc": "2026-09-25T02:00:00Z", "sensorId": "rear", "temperatureC": 4.2, "relativeHumidityPct": 78 }
+  ]
+}
