@@ -125,6 +125,21 @@ async function routeApi(request, response, pathname, searchParams) {
     const samples = JSON.parse(await readFile(samplesPath, 'utf8'));
     return sendJson(response, 200, samples);
   }
+  if (method === 'GET' && pathname === '/ml/models/milk') {
+    const modelCardPath = path.join(ROOT, 'ml', 'models', 'milk_quality_v1', 'model_card.json');
+    try {
+      const modelCard = JSON.parse(await readFile(modelCardPath, 'utf8'));
+      if (!modelCard || typeof modelCard !== 'object' || Array.isArray(modelCard)) {
+        return sendJson(response, 200, { status: 'unavailable', reason: 'The milk_quality_v1 model card is not a JSON object.' });
+      }
+      return sendJson(response, 200, modelCard);
+    } catch (error) {
+      const reason = error.code === 'ENOENT'
+        ? 'The milk_quality_v1 model card is not available.'
+        : 'The milk_quality_v1 model card could not be read.';
+      return sendJson(response, 200, { status: 'unavailable', reason });
+    }
+  }
   if (method === 'GET' && pathname === '/public-benchmark/shipments') {
     return sendJson(response, 200, { shipments: await listPublicBenchmarkShipments() });
   }
@@ -181,7 +196,7 @@ const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || '/', `http://${request.headers.host || 'localhost'}`);
     const pathname = apiPath(url.pathname);
-    if (pathname.startsWith('/health') || pathname.startsWith('/shipments') || pathname.startsWith('/observations') || pathname.startsWith('/predict') || pathname.startsWith('/detect') || pathname.startsWith('/alerts') || pathname.startsWith('/simulate') || pathname.startsWith('/recommendations') || pathname.startsWith('/advisor') || pathname.startsWith('/evaluation') || pathname.startsWith('/products') || pathname.startsWith('/evidence') || pathname.startsWith('/public-benchmark') || pathname === '/field-data/samples') {
+    if (pathname.startsWith('/health') || pathname.startsWith('/shipments') || pathname.startsWith('/observations') || pathname.startsWith('/predict') || pathname.startsWith('/detect') || pathname.startsWith('/alerts') || pathname.startsWith('/simulate') || pathname.startsWith('/recommendations') || pathname.startsWith('/advisor') || pathname.startsWith('/evaluation') || pathname.startsWith('/products') || pathname.startsWith('/evidence') || pathname.startsWith('/public-benchmark') || pathname.startsWith('/ml/') || pathname === '/field-data/samples') {
       return await routeApi(request, response, pathname, url.searchParams);
     }
     if (request.method !== 'GET' && request.method !== 'HEAD') return sendJson(response, 405, { error: 'Method not allowed.' });

@@ -18,6 +18,7 @@ const state = {
   publicBenchmarkEvaluation: null,
   publicEvaluationBusy: false,
   fieldDataSamples: null,
+  milkModelCard: null,
   selectedFieldDataset: 'milk',
   evaluationFold: 'all',
   lastEvaluation: null,
@@ -227,7 +228,19 @@ async function loadData() {
     return;
   }
   state.loading = false;
+  void loadMilkModelCard();
   render();
+}
+
+async function loadMilkModelCard() {
+  if (state.milkModelCard !== null) return;
+  state.milkModelCard = { status: 'loading' };
+  try {
+    state.milkModelCard = await api('/api/ml/models/milk');
+  } catch (error) {
+    state.milkModelCard = { status: 'unavailable', reason: error.message || 'The optional model card could not be loaded.' };
+  }
+  if (state.view === 'field-data' && state.selectedFieldDataset === 'milk') render();
 }
 
 function render() {
@@ -495,6 +508,73 @@ function fieldSampleChart(sample) {
   return `<div class="chart-wrap"><svg class="chart-svg field-sample-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="Observed temperature sample from ${escapeHtml(sample.label)}"><title>${escapeHtml(sample.label)}</title>${markup}</svg></div><div class="public-legend">${legend}</div>`;
 }
 
+function modelValue(value) {
+  if (typeof value === 'number' && Number.isFinite(value)) return new Intl.NumberFormat('en', { maximumFractionDigits: 4 }).format(value);
+  if (typeof value === 'string' && value.trim()) return value.trim();
+  return '—';
+}
+
+function modelMetricLabel(value) {
+  return String(value).replaceAll('_', ' ').replaceAll('-', ' ').toUpperCase();
+}
+
+function modelFoldLabel(fold) {
+  if (typeof fold === 'string' || typeof fold === 'number') return String(fold);
+  if (!fold || typeof fold !== 'object') return '';
+  return String(fold.farm_id ?? fold.farmId ?? fold.held_out_farm ?? fold.heldOutFarm ?? fold.name ?? fold.id ?? '').trim();
+}
+
+function renderMilkMeasuredModelCard() {
+  const model = state.milkModelCard;
+  const publicBadge = '<span class="badge badge-high">PUBLIC MEASURED DATA MODEL</span>';
+  if (!model || model.status === 'loading') {
+    return `<article class="card field-ml-model-card"><div class="card-header"><div><h3 class="card-title">Measured-Data ML Model</h3><div class="card-subtitle">Optional milk model metadata</div></div>${publicBadge}</div><div class="card-body"><p class="small-muted">Loading the saved model card…</p></div></article>`;
+  }
+  if (model.status === 'unavailable') {
+    return `<article class="card field-ml-model-card"><div class="card-header"><div><h3 class="card-title">Measured-Data ML Model</h3><div class="card-subtitle">Milk laboratory-quality model</div></div>${publicBadge}</div><div class="card-body"><p class="small-muted">Model card unavailable: ${escapeHtml(model.reason || 'No saved milk_quality_v1 model card was found.')}</p><div class="field-limit-note"><strong>Interpretation boundary</strong><p>This section does not provide a live shipment prediction, food-safety clearance, pathogen detection, universal spoilage prediction, or remaining shelf life (RSL).</p></div></div></article>`;
+  }
+
+  const dataset = model.dataset && typeof model.dataset === 'object' ? model.dataset : {};
+  const validation = model.validation && typeof model.validation === 'object' ? model.validation : {};
+  const example = model.oof_example && typeof model.oof_example === 'object' ? model.oof_example : {};
+  const metrics = validation.pooled_metrics && typeof validation.pooled_metrics === 'object' ? validation.pooled_metrics : {};
+  const metricRows = Object.entries(metrics)
+    .filter(([, value]) => value !== null && value !== undefined && (typeof value === 'number' || typeof value === 'string'))
+    .map(([name, value]) => `<div class="quality-row"><span>${escapeHtml(modelMetricLabel(name))}</span><strong>${escapeHtml(modelValue(value))}</strong></div>`)
+    .join('') || '<div class="small-muted">No pooled validation metrics are recorded in the model card.</div>';
+  const folds = Array.isArray(validation.folds) ? validation.folds.map(modelFoldLabel).filter(Boolean) : [];
+  const trainingFarms = Array.isArray(model.training_farms) ? model.training_farms.map(modelFoldLabel).filter(Boolean) : [];
+  const limitations = Array.isArray(model.limitations) ? model.limitations : [];
+  const features = Array.isArray(model.features) ? model.features.map((feature) => typeof feature === 'string' ? feature : feature?.name ?? feature?.id ?? '').filter(Boolean) : [];
+  const sourceUrl = typeof dataset.url === 'string' && /^https?:\/\//i.test(dataset.url) ? dataset.url : '';
+  const source = sourceUrl
+    ? `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(dataset.name || 'Dataset source')} ↗</a>`
+    : escapeHtml(dataset.name || 'Not recorded');
+  const target = [model.target, model.target_transform ? `transform: ${model.target_transform}` : '', model.target_unit ? `unit: ${model.target_unit}` : ''].filter(Boolean).map(escapeHtml).join(' · ') || 'Not recorded';
+  const exampleValues = example.observed !== undefined || example.predicted !== undefined
+    ? `<div class="quality-row"><span>Observed held-out target</span><strong>${escapeHtml(modelValue(example.observed))}</strong></div><div class="quality-row"><span>Predicted held-out target</span><strong>${escapeHtml(modelValue(example.predicted))}</strong></div>`
+    : '<p class="small-muted">No saved out-of-fold example is available in the model card.</p>';
+  const exampleMeta = [example.farm_id ? `Farm ${example.farm_id}` : '', example.sample_id ? `Sample ${example.sample_id}` : ''].filter(Boolean).map(escapeHtml).join(' · ');
+  const limitationList = limitations.length
+    ? `<ul class="limitations-list">${limitations.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+    : '<p class="small-muted">No additional limitations are recorded in the model card.</p>';
+  return `<article class="card field-ml-model-card"><div class="card-header"><div><h3 class="card-title">Measured-Data ML Model</h3><div class="card-subtitle">${escapeHtml(model.model_name || 'milk_quality_v1')} · retrospective validation</div></div>${publicBadge}</div><div class="card-body">
+    <div class="quality-row"><span>Experimental status</span><strong>EXPERIMENTAL · ${escapeHtml(modelMetricLabel(model.status || 'research prototype'))}</strong></div>
+    <div class="quality-row"><span>Product</span><strong>${escapeHtml(model.product || model.product_type || 'Milk')}</strong></div>
+    <div class="quality-row"><span>Target measurement</span><strong>${target}</strong></div>
+    <div class="quality-row"><span>Model</span><strong>${escapeHtml(model.model_name || 'milk_quality_v1')} · ${escapeHtml(model.algorithm || 'Algorithm not recorded')}</strong></div>
+    <div class="quality-row"><span>Dataset source</span><strong>${source}${dataset.version ? ` · ${escapeHtml(dataset.version)}` : ''}${dataset.license ? ` · ${escapeHtml(dataset.license)}` : ''}</strong></div>
+    <div class="quality-row"><span>Validation method</span><strong>${escapeHtml(validation.method || 'Not recorded')}${folds.length ? ` · ${folds.length} folds (${escapeHtml(folds.join(', '))})` : ''}</strong></div>
+    ${trainingFarms.length ? `<div class="quality-row"><span>Training farms</span><strong>${escapeHtml(trainingFarms.join(', '))}</strong></div>` : ''}
+    ${model.sample_count !== undefined ? `<div class="quality-row"><span>Usable sample count</span><strong>${escapeHtml(modelValue(model.sample_count))}</strong></div>` : ''}
+    <div class="field-subhead"><div><h4>Saved out-of-fold example</h4><p>${exampleMeta ? `${exampleMeta} · ` : ''}Held-out public-data observation</p></div></div>
+    ${exampleValues}
+    <div class="field-subhead"><div><h4>Actual pooled validation metrics</h4><p>Reported from held-out folds</p></div></div>${metricRows}
+    ${features.length ? `<div class="quality-row"><span>Model features</span><strong>${escapeHtml(features.join(' · '))}</strong></div>` : ''}
+    <div class="field-limit-note"><strong>Retrospective held-out public-data example</strong><p>This is not a Qatar shipment prediction or a live shipment prediction. It does not provide food-safety clearance, pathogen detection, universal spoilage prediction, or remaining shelf life (RSL).</p><strong>Model limitations</strong>${limitationList}</div>
+    </div></article>`;
+}
+
 function renderMeasuredDataLibrary() {
   const datasets = state.fieldDataSamples?.datasets || [];
   if (!datasets.length) return '<article class="card empty-state"><div><h2>Additional measured sources are unavailable</h2><p>The strawberry shipment view remains available above. Regenerate the compact samples from the local source files to restore this library.</p></div></article>';
@@ -518,7 +598,7 @@ function renderMeasuredDataLibrary() {
   return `<section class="field-library-section"><div class="page-heading field-library-heading"><div><div class="eyebrow">Measured evidence library · five sources</div><h2>Explore more than the strawberry route</h2><p>These are real published observations from different parts of the food chain. Pick a source to see what was recorded and what it can actually support.</p></div><a class="button" href="/field-data-samples.json" download>Download compact sample</a></div>
     <div class="field-library-grid"><div class="card field-source-list"><div class="card-header"><div><h3 class="card-title">Choose a dataset</h3><div class="card-subtitle">Counts refer to validated source records; one record is one measurement</div></div><span class="badge badge-outline">${datasets.length} SOURCES</span></div><div class="field-source-buttons">${sourceButtons}</div></div>
     <article class="card field-dataset-detail"><div class="card-header"><div><h3 class="card-title">${escapeHtml(selected.title)}</h3><div class="card-subtitle">${escapeHtml(selected.region)} · ${new Intl.NumberFormat('en').format(selected.observationCount || 0)} observed sensor or aggregate records</div></div><span class="badge badge-high">SOURCE DATA</span></div><div class="card-body"><p class="field-dataset-what">${escapeHtml(selected.what)}</p><div class="field-dataset-citation"><a href="${escapeHtml(selected.url)}" target="_blank" rel="noreferrer">${escapeHtml(selected.citation)} ↗</a><span>${escapeHtml(selected.license)}</span></div>${sampleContent}<div class="field-limit-note"><strong>Scope and limitation</strong><p>${escapeHtml(selected.limit)}</p><strong>Useful for</strong><p>${escapeHtml(selected.use)}</p></div></div></article></div>
-    ${quality}<div class="group-note"><strong>How to read this page:</strong> measured public data help us inspect sensor patterns and data quality. These records are kept separate from the simulated Qatar shipment screens. None of these sample traces trains the dashboard’s RSL estimate or gives a food-safety decision.</div></section>`;
+    ${quality}${selected.id === 'milk' ? renderMilkMeasuredModelCard() : ''}<div class="group-note"><strong>How to read this page:</strong> measured public data help us inspect sensor patterns and data quality. These records are kept separate from the simulated Qatar shipment screens. None of these sample traces trains the dashboard’s RSL estimate or gives a food-safety decision.</div></section>`;
 }
 
 function chartValueY(value, min, max, top, height) {

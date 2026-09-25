@@ -1,5 +1,8 @@
 node_modules/
+.ml_venv/
 .env
+**/__pycache__/
+*.py[cod]
 artifacts/evaluation/*.json
 artifacts/evaluation/*.csv
 artifacts/evaluation/*.png
@@ -12,3 +15,5 @@ data/external/**/*.xlsx
 data/external/**/*.txt
 !data/external/README.md
 !data/external/manifest.json
+ml/data/raw/milk/**
+!ml/data/raw/milk/README.md
